@@ -23,6 +23,7 @@ var Home = React.createClass({
 
 var routes = (
   <Route handler={App}>
+    <Route handler={Home} />
     <Route path="about" handler={About} />
     <Route path="inbox" handler={Inbox} />
   </Route>
