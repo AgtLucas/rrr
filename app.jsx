@@ -1,4 +1,7 @@
 var React = require('react');
+var Router = require('react-router');
+var Route = Router.Route;
+var RouteHandler = Router.RouteHandler;
 
 var About = React.createClass({
   render: function () {
@@ -18,28 +21,24 @@ var Home = React.createClass({
   }
 });
 
+var routes = (
+  <Route handler={App}>
+    <Route path="about" handler={About} />
+    <Route path="inbox" handler={Inbox} />
+  </Route>
+);
+
 var App = React.createClass({
   render () {
-    var Child;
-    switch (this.props.route) {
-      case 'about' : Child = About; break;
-      case 'inbox' : Child = Inbox; break;
-      default: Child = Home;
-    }
-
     return (
       <div>
         <h1>App</h1>
-        <Child />
+        <RouteHandler />
       </div>
-    )
+    );
   }
 });
 
-function render() {
-  var route = window.location.hash.substr(1);
-  React.render(<App route={route} />, document.body);
-}
-
-window.addEventListener('hashchange', render);
-render();
+Route.run(routes, Router.HashLocation, (Root) => {
+  React.render(<Root />, document.body);
+});
