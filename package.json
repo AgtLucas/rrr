@@ -20,5 +20,10 @@
     "react": "^0.13.2",
     "react-router": "^0.13.3",
     "webpack": "^1.8.11"
+  },
+  "devDependencies": {
+    "babel-core": "^5.1.13",
+    "react-hot-loader": "^1.2.5",
+    "webpack-dev-server": "^1.8.2"
   }
 }
