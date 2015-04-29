@@ -39,6 +39,6 @@ var App = React.createClass({
   }
 });
 
-Route.run(routes, Router.HashLocation, (Root) => {
+Router.run(routes, Router.HashLocation, (Root) => {
   React.render(<Root />, document.body);
 });
