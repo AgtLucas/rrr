@@ -1,0 +1,19 @@
+{
+  "name": "rrr",
+  "version": "1.0.0",
+  "description": "React Router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgtLucas/rrr.git"
+  },
+  "author": "Lucas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgtLucas/rrr/issues"
+  },
+  "homepage": "https://github.com/AgtLucas/rrr"
+}
