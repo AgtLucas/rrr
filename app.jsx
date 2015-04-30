@@ -31,7 +31,9 @@ var routes = (
   <Route handler={App}>
     <Route handler={Home}/>
     <Route path="about" handler={About}/>
-    <Route path="inbox" handler={Inbox}/>
+    <Route path="inbox" handler={Inbox}>
+      <Route path="messages/:id" handler={Message}/>
+    </Route>
   </Route>
 );
 
