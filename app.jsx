@@ -2,6 +2,7 @@ var React = require('react');
 var Router = require('react-router');
 var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
+var Link = Router.Link;
 
 var About = React.createClass({
   render: function () {
@@ -17,7 +18,12 @@ var Inbox = React.createClass({
 
 var Home = React.createClass({
   render: function () {
-    return <h2>Home</h2>;
+    return (
+      <div>
+        <h2>Home</h2>
+        <Link to="inbox">Inbox</Link>
+      </div>
+    );
   }
 });
 
@@ -49,5 +55,5 @@ var App = React.createClass({
 });
 
 Router.run(routes, Router.HistoryLocation, (Root) => {
-  React.render(<Root />, document.body);
+  React.render(<Root />, document.getElementById('main-content'));
 });
