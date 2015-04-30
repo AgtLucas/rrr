@@ -22,16 +22,18 @@ var Home = React.createClass({
 });
 
 var Message = React.createClass({
-  render() {
+  render: function () {
     return <h3>Message</h3>;
   }
 });
 
 var routes = (
   <Route handler={App}>
-    <Route handler={Home} />
-    <Route path="about" handler={About} />
-    <Route path="inbox" handler={Inbox} />
+    <Route handler={Home}/>
+    <Route path="about" handler={About}/>
+    <Route path="inbox" handler={Inbox}>
+      <Route path="messages/:id" handler={Message}/>
+    </Route>
   </Route>
 );
 
@@ -40,7 +42,7 @@ var App = React.createClass({
     return (
       <div>
         <h1>App</h1>
-        <RouteHandler />
+        <RouteHandler/>
       </div>
     );
   }
