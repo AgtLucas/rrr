@@ -21,7 +21,9 @@ var Home = React.createClass({
     return (
       <div>
         <h2>Home</h2>
-        <Link to="inbox">Inbox</Link>
+        <p><Link to="about">About</Link></p>
+        <p><Link to="inbox">Inbox</Link></p>
+        <p><Link to="messages">Message</Link></p>
       </div>
     );
   }
@@ -36,9 +38,9 @@ var Message = React.createClass({
 var routes = (
   <Route handler={App}>
     <Route handler={Home}/>
-    <Route path="about" handler={About}/>
-    <Route path="inbox" handler={Inbox}>
-      <Route path="messages/:id" handler={Message}/>
+    <Route name="about" handler={About}/>
+    <Route name="inbox" handler={Inbox}>
+      <Route name="messages" handler={Message}/>
     </Route>
   </Route>
 );
